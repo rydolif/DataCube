@@ -152,7 +152,6 @@
 		flex-direction: row
 		justify-content: space-between
 
-
 .section__header
 	background-image: url(../img/header.png)
 	background-size: cover
@@ -164,6 +163,17 @@
 	padding-bottom: 135px
 	position: relative
 
+	&::before
+		content: attr(data-bg)
+		display: block
+		position: absolute
+		right: 0
+		bottom: -120px
+		left: 15%
+		font-size: 175px
+		font-weight: 800
+		color: rgba(33, 33, 33, .05)
+
 	h2
 		&::before
 			content: attr(data-title)
@@ -172,10 +182,16 @@
 			right: 0
 			top: -80px
 			font-size: 175px
-			color: rgba(33, 33, 33, .05);
+			color: rgba(33, 33, 33, .05)
 
 	h3
 		margin-bottom: 55px
+
+	svg
+		width: 40px
+		height: 40px
+		fill: $accent
+		margin-bottom: 25px
 
 	&__container
 		display: flex
@@ -185,8 +201,95 @@
 
 	&__block
 		width: 33.33333333333%
-		padding: 110px 40px 40px 40px
+		padding: 40px
 		border: 1px solid #e6e6e6
+		transition: all .3s
+
+		&:hover
+			background-color: $accent
+			color: #fff
+			svg
+				fill: #fff
+				transition: all .3s
+
+.tasks
+	background-image: url(../img/tasks-bg.png)
+	background-repeat: no-repeat
+	background-size: cover
+	padding-top: 140px
+	padding-bottom: 190px
+
+	h2, h3, h4
+		color: #fff
+
+	h2, h3
+		text-align: center
+
+	h2
+		margin-bottom: 15px
+
+	h3
+		font-weight: 300
+		margin-bottom: 55px
+
+	h4
+		margin-left: 85px
+
+	svg
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 40px
+		height: 35px
+		fill: $accent
+
+	li
+		position: relative
+		margin-bottom: 20px
+		padding-left: 20px
+		font-size: 12px
+
+		&:last-child
+			margin-bottom: 0
+
+		&::before
+			content: ""
+			position: absolute
+			left: 0
+			top: 10px
+			width: 5px
+			height: 5px
+			border-radius: 50%
+			background-color: #fff
+
+
+	&__container
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		flex-wrap: wrap
+
+	&__block
+		width: 30%
+		color: #fff
+		font-weight: 300
+		margin-bottom: 50px
+
+		&:nth-child(n+3)
+			margin-bottom: 0
+
+	&__img
+		position: absolute
+		background-color: #fff
+		border-radius: 50%
+		width: 60px
+		height: 60px
+	
+	&__title
+		position: relative
+		margin-bottom: 50px
+
 
 
 

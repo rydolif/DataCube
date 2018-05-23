@@ -10,7 +10,12 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
-		rsync         = require('gulp-rsync');
+		rsync         = require('gulp-rsync'),
+		
+		svgstore     = require('gulp-svgstore'),
+		svgmin       = require('gulp-svgmin'),
+		cheerio      = require('gulp-cheerio'),
+		rename       = require('gulp-rename');
 
 gulp.task('browser-sync', function() {
 	browsersync({
@@ -67,6 +72,28 @@ gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browsersync.reload)
+});
+
+//--------------------------------svg-sprite-----------------------------
+gulp.task('symbols', function() {
+  return gulp.src('app/img/icon/*.svg')
+    .pipe(svgmin())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(cheerio({
+      run: function($) {
+        $('[fill]').removeAttr('fill');
+        $('[style]').removeAttr('style');
+        $('[class]').removeAttr('class');
+        $('title').remove();
+        $('defs').remove();
+        $('style').remove();
+        $('svg').attr('style', 'display:none');
+      }
+    }))
+    .pipe(rename('symbols.html'))
+    .pipe(gulp.dest('app/img'));
 });
 
 gulp.task('default', ['watch']);
