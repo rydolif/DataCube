@@ -248,6 +248,84 @@
 				</ul>
 			</div>
 		</section>
+
+		<section class="why">
+			<div class="container">
+				
+				<h2 data-title="DataCube">Почему<span> внедрение системы</span></h2>
+				<h3><span>DataCube</span> рационально и выгодно?</h3>
+
+				<div class="why__container">
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Безопасность</h4>
+						<p>Выявление утечек информации <br>из компании</p>
+					</div>
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Безопасность</h4>
+						<p>Выявление утечек информации <br>из компании</p>
+					</div>
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Стоимость</h4>
+						<p>Снижение стоимости хранения информации по сравнению с другими классами решений</p>
+					</div>
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Оптимизация</h4>
+						<p>Оптимизирует возможности<br> DLP-систем за счет снижения нагрузки путем выноса системы хранения</p>
+					</div>
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Мониторинг</h4>
+						<p>Мониторинг продуктивности работы персонала компании</p>
+					</div>
+					<div class="why__block">
+						<div class="why__circle">
+							<svg><use xlink:href="#comp"></use></svg>
+						</div>
+						<h4>Производительность</h4>
+						<p>Улучшение производительности работы <br>почтовой системы</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="about">
+			<img src="img/about-bg.png" alt="about" class="about__bg">
+			<div class="container">
+
+				<h2>О компании</h2>
+				<h4>Компания «Аналитик-Софт»</h4>
+
+				<p>занимается разработкой продуктов для анализа данных и интеграцией 
+				<br>систем с 2005 года. В штат входят высококлассные программисты, 
+				<br>аналитики, специалисты в области банковской и промышленной
+				<br> ИТ-безопасности.</p>
+			
+			</div>
+		</section>
+
+		<section class="map">
+
+			<div id="map"></div>
+
+			<div class="container">
+				<div class="map__block">1231231231231</div>
+			</div>
+		</section>
+
 	</main>
 
 	<footer class="footer">
@@ -368,6 +446,127 @@
 			<h2><b>Спасибо!</b><br>Результат придёт в течении 5 минут</h2>
 	</div>
  -->
+
+     <script>
+      function initMap() {
+        var uluru = {lat: 59.8887997, lng: 30.2776553};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: uluru,
+          styles: [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#69c8f2"
+            },
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "-1"
+            }
+        ]
+    }
+]
+        });
+
+
+          var marker = new google.maps.Marker({
+            position: {lat: 59.8887997, lng: 30.2776553},
+            map: map,
+            // icon: 'img/mark.png'
+          });
+
+
+          }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnk4RCDwjSucIJ2WXRnLkuCrsWR4DUM4&callback=initMap"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>

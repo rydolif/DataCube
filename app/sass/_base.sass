@@ -51,8 +51,15 @@ h2
 	font-size: 60px
 	font-weight: 800
 	color: $accent
-
-	span
+	
+	&::before
+		content: attr(data-title)
+		display: block
+		position: absolute
+		right: 0
+		top: -80px
+		font-size: 175px
+		color: rgba(33, 33, 33, .05)
 
 h3
 	font-size: 36px
@@ -403,7 +410,7 @@ body input:required:valid, body textarea:required:valid
 
 //-------------------------------------карта-map--------------------------------
 #map
-	height: 620px
+	height: 650px
 
 //---------------------------------------------------------animation-------------------------------------
 //----------------------error--------------------

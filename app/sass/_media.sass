@@ -78,10 +78,22 @@
 				right: 60%
 				margin-bottom: 0
 
+	.why
+		padding-bottom: 40px
+		background-position: -380px -20px
+	
+	.about
+		padding: 70px 0
+		background-position: 300px 0
+
 
 @media only screen and (max-width : 992px)
 	h1, h2
-		font-size: 40px
+		font-size: 38px
+
+	h2
+		&::before
+			font-size: 120px
 
 	h3
 		font-size: 30px
@@ -174,10 +186,6 @@
 		&::before
 			font-size: 120px
 
-		h2
-			&::before
-				font-size: 120px
-
 		h3
 			margin-bottom: 20px
 
@@ -205,6 +213,8 @@
 				margin-bottom: 0
 
 	.architecture
+		padding-bottom: 40px
+
 		p
 			br
 				display: none
@@ -276,10 +286,35 @@
 
 		&__block
 			width: 70%
+	
+	.why
+		background-position: -374px -90px
+		padding-top: 40px
+
+		h3
+			margin-bottom: 35px
+
+		p
+			br
+				display: none
+				
+		&__block
+			margin-bottom: 25px
+			width: 32%
+	
+	.about
+
+		&__bg
+			left: 50%
 
 
 
 @media only screen and (max-width : 767px)
+	h2
+		&::before
+			top: -40px
+			font-size: 90px
+
 	.tel
 		display: none
 
@@ -295,7 +330,30 @@
 		h2
 			&::before
 				top: -40px
-				font-size: 90px
+
+	.why
+		background-image: none
+
+		&__block
+			width: 48%
+
+	.about
+		padding: 30px 0
+
+		h2
+			margin-bottom: 15px
+
+		h4
+			margin-bottom: 0
+
+		p
+			br
+				display: none
+
+		&__bg
+			display: none
+
+
 
 @media only screen and (max-width : 576px)
 	h1, h2
@@ -318,14 +376,22 @@
 		li
 			width: 100%
 			text-align: center
+
+	.why
+
+		&__circle
+			margin-bottom: 15px
+
+
 @media only screen and (max-width : 480px)
+	h2
+		&::before
+			display: none
+
 	.premises
 		&::before
 			display: none
 				
-		h2
-			&::before
-				display: none
 
 		&__block
 			width: 100%
