@@ -1,17 +1,10 @@
 <?php
-	$SITE_TITLE = 'Boss Soffa';
+	$SITE_TITLE = 'DataCube';
 	$SITE_DESCR = '';
 
 	if ( isset($_POST) ) {
-		// $name = htmlspecialchars(trim($_POST['name']));
-		$email = htmlspecialchars(trim($_POST['email']));
+		$name = htmlspecialchars(trim($_POST['name']));
 		$phone = htmlspecialchars(trim($_POST['phone']));
-		$one = htmlspecialchars ($_POST["one"]);
-		$two = htmlspecialchars ($_POST["two"]);
-		$three = htmlspecialchars ($_POST["three"]);
-		$four = htmlspecialchars ($_POST["four"]);
-		$five = htmlspecialchars ($_POST["five"]);
-		$six = htmlspecialchars ($_POST["six"]);
 		$subject = $_POST['subject'] ? htmlspecialchars(trim($_POST['subject'])) : '';
 		$comment = isset($_POST['comment']) ? htmlspecialchars(trim($_POST['comment'])) : '';
 		$question = isset($_POST['question']) ? htmlspecialchars(trim($_POST['question'])) : '';
@@ -22,14 +15,8 @@
 		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
 
 		$data = '<h1>'.$subject."</h1>";
-		$data .= 'Email: '.$email."<br>";
+		$data .= 'Имя: '.$name."<br>";
 		$data .= 'Телефон: '.$phone."<br>";
-		$data .= 'Название дивана: '.$one."<br>";
-		$data .= 'Конфигураци: '.$two."<br>";
-		$data .= 'Размер: '.$three."<br>";
-		$data .= 'Глубина: '.$four."<br>";
-		$data .= 'Ткань: '.$five."<br>";
-		$data .= 'Куда отправить стоимость: '.$six."<br>";
 
 		if ( $comment != '' ) {
 			$data .= 'Комментарий: ' . $comment;

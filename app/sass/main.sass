@@ -163,17 +163,20 @@
 	padding-top: 90px
 	padding-bottom: 135px
 	position: relative
-
-	&::before
-		content: attr(data-bg)
-		display: block
-		position: absolute
-		right: 0
-		bottom: -120px
-		left: 15%
-		font-size: 175px
-		font-weight: 800
-		color: rgba(33, 33, 33, .05)
+	overflow: initial
+	
+	&__container
+		position: relative
+		&::before
+			content: attr(data-bg)
+			display: block
+			position: absolute
+			right: 0
+			bottom: -260px
+			left: 0
+			font-size: 175px
+			font-weight: 800
+			color: rgba(33, 33, 33, .05)
 
 	h3
 		margin-bottom: 55px
@@ -198,6 +201,7 @@
 
 		&:hover
 			background-color: $accent
+			box-shadow: 0 0 20px rgba($accent, .15)
 			color: #fff
 			svg
 				fill: #fff
@@ -288,6 +292,18 @@
 	background-image: url(../img/architecture-bg.png)
 	background-repeat: no-repeat
 	background-position: center
+	
+	&__container
+		&::before
+			content: attr(data-bg)
+			display: block
+			position: absolute
+			right: 0
+			top: 20px
+			left: 0
+			font-size: 175px
+			font-weight: 800
+			color: rgba(33, 33, 33, .05)
 
 	h3
 		margin-bottom: 30px
@@ -369,6 +385,7 @@
 	background-repeat: no-repeat
 	text-align: center
 	background-position: 0 -20px
+	background-color: #fafafa
 
 	h2
 		&::before
@@ -422,6 +439,18 @@
 	padding-bottom: 215px
 	position: relative
 
+	&__container
+		position: relative
+		&::before
+			content: attr(data-bg)
+			display: block
+			position: absolute
+			right: 0
+			top: -70px
+			left: 0
+			font-size: 175px
+			font-weight: 800
+			color: rgba(33, 33, 33, .05)
 	h2
 		margin-bottom: 60px
 
@@ -440,18 +469,63 @@
 .map
 	position: relative
 
-	&__block
-		// position: absolute
-		// top: 0
-		width: 450px
-		height: 80%
-		background-color: #fff
+	h2
+		font-size: 48px
+	
+	p
+		margin-bottom: 30px
 
+	ul
+		margin-bottom: 30px
+
+	li
+		line-height: 2
+		margin-bottom: 10px
+
+		&:last-child
+			margin-bottom: 0
+	
+		a
+			color: #212121
+
+	span
+		font-size: 16px
+		font-family: $open
+		font-weight: 800
+		color: $accent
+
+	.container
+		position: initial
+
+	&__block
+		position: absolute
+		top: 70px
+		width: 450px
+		background-color: #fafafa
+		padding: 40px
+		background-image: url(../img/map-bg.png)
+		background-repeat: no-repeat
+		background-position: 230px bottom
+		box-shadow: 0 20px 50px rgba(0, 0, 0, .15)
+
+		&::before
+			content: attr(data-bg)
+			display: block
+			position: absolute
+			top: -10px
+			left: 10px
+			font-size: 75px
+			font-weight: 800
+			color: rgba(33, 33, 33, .05)
 
 
 .footer
-	height: 500px
+	background-color: #212121
 
+	&__copy
+		padding: 0 0 30px 0
+		text-align: center
+		color: #4c4c4c
 
 
 

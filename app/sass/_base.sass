@@ -70,7 +70,7 @@ h3
 
 h4
 	font-size: 16px
-	font-weight: 800
+	font-weight: 700
 	line-height: 1.6
 	font-family: $open
 
@@ -106,20 +106,28 @@ a:hover
 input
 	box-shadow: none
 	-webkit-appearance: none
-	color: #7e8187
-	font-size: 18px
+	width: 100%
+	padding: 15px 40px
+	border-color: red
+	border-radius: 20px
+	border: none
+	outline: none
+	background-color: #f2f2f2
+	font-weight: 800
 
 	&::placeholder
-		color: #b2b2b2
+		color: #212121
 		font-size: 14px
 
 	&:hover
 		outline: none
+		border: none
 		box-shadow: none
 		-webkit-appearance: none
 
 	&:focus
 		outline: none
+		border: none
 		box-shadow: none
 		-webkit-appearance: none
 
@@ -139,10 +147,11 @@ textarea
 		-webkit-appearance: none
 
 body input:focus:required:invalid, body textarea:focus:required:invalid
-	border: 1px solid #cccccc
+	border: none
 
 body input:required:valid, body textarea:required:valid
-	border: 1px solid #cccccc
+	border: none
+
 //--------------------------------preloader----------------------------------------------
 .preloader
 	position: fixed
@@ -208,7 +217,7 @@ body input:required:valid, body textarea:required:valid
 	color: #fff
 	font-weight: 800
 	letter-spacing: 1px
-	box-shadow: 0 0 20px rgba(53, 185, 99, .6)
+	box-shadow: 0 0 30px rgba(53, 185, 99, .6)
 
 	&:hover
 		outline: none
@@ -231,28 +240,6 @@ body input:required:valid, body textarea:required:valid
 //--------------------------------------form-------------------------------------------
 
 .form
-	position: relative
-	display: flex
-	flex-direction: row
-	justify-content: space-around
-	align-items: center
-
-	&-group
-		width: 30%
-		position: relative
-
-	input
-		width: 100%
-		padding: 10px 15px
-		font-size: 14px
-		border-radius: 5px
-		line-height: 1
-	
-	.btn
-		font-weight: 600
-		padding-top: 15px
-		padding-bottom: 15px
-
 	label.error
 		position: absolute
 		top: -20px
@@ -268,60 +255,47 @@ body input:required:valid, body textarea:required:valid
 .modal
 	position: relative
 	overflow: hidden
-	width: 1000px
+	width: 800px
 	height: auto
-	padding: 55px 55px 55px 360px
+	padding: 50px
 	border-radius: 10px
 	background-color: #fff
+	z-index: 1
 
 	img
 		position: absolute
-		left: 0
-		top: 0
-		height: 100%
-		max-width: 320px
+		right: 20px
+		bottom: -60px
+		z-index: -1
 
 	h2
-		margin-bottom: 15px
-		font-size: 32px
+		margin-bottom: 50px
+		font-size: 36px
 		text-align: left
-		font-weight: 400
 
-	p
-		font-size: 16px
+		span
+			font-size: 26px
+			color: #212121
+			font-weight: 300
+	
+	b
+		color: $accent
+		font-weight: 300
 
 	.form-group
 		display: flex
 		flex-direction: row
-		width: 100%
-		margin-bottom: 30px
+		width: 270px
+		margin-bottom: 20px
+		position: relative
 
 		&__block
 			width: 53%
 			&:nth-child(even)
 				width: 45%
 
-	select
-		width: 100%
-		padding: 8px 20px
-		border-color: red
-		border-radius: 4px
-		outline: none
-
-		&:nth-child(n+2)
-			margin-top: 20px
-
-	input
-		width: 100%
-		padding: 8px 20px
-		border-color: red
-		border-radius: 4px
-		outline: none
-
 	.btn
-		font-weight: 600
-		padding-top: 15px
-		padding-bottom: 15px
+		width: 270px
 
 	label.error
 		position: absolute
@@ -333,7 +307,6 @@ body input:required:valid, body textarea:required:valid
 		color: red
 		text-align: center
 		font-weight: 600
-
 
 	.hamburger
 		position: absolute
@@ -353,15 +326,38 @@ body input:required:valid, body textarea:required:valid
 			height: 4px
 			right: 0
 
+.modal-base
+	width: 320px
+	padding: 30px
+
+	h2
+		font-size: 24px
+		margin-bottom: 30px
+		span
+			font-size: 18px
+
+	img
+		display: none
+
+	.form-group
+		width: 100%
+
+	.btn
+		width: 100%
+
+
 #thanks
 	width: 720px
 	text-align: center
-	padding: 30px
+	padding: 20px
 
 	h2
 		font-size: 32px
 		text-align: center
 		margin-bottom: 0
+
+		span
+			font-size: 16px
 
 	p
 		text-align: center
@@ -374,7 +370,7 @@ body input:required:valid, body textarea:required:valid
 		width: 100px
 		height: 100px
 		margin: 45px auto
-		right: 50%
+		top: 0
 		left: 50%
 		transform: translate(-50%, 0%)
 
